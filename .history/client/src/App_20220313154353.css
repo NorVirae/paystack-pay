@@ -1,0 +1,41 @@
+
+.product__container{
+  max-width: 90rem;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product__card {
+  display: grid;
+  gap:4rem;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.product__description{
+
+}
+
+.product__detail{
+  display: flex;
+  justify-content: space-ar;
+}
+
+.product__image {
+  border-radius: 2rem;
+  object-fit: cover;
+  height: 30vh;
+
+}
+
+.product__detail--title{
+
+}
+
+.product__detail--data{
+
+}
