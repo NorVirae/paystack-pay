@@ -43,11 +43,23 @@ const innitiateTranz = (data) => {
             currency:"NGN",
             callback_url:"https://www.fischela.com",
         }
+        const options = {
+            method: 'POST',
+            headers: { 'content-type': 'application/json', "Authorization":"Bearer "+process.env.PAYSTACK_TEST_SECRET_KEY},
+            data: {
+                
+
+            },
+            url:"https://api.paystack.co/transaction/initialize"
+          };
+
           
-        options.method = "POST"
-        options.data = data
-        options.url = "https://api.paystack.co/transaction/initialize"
-        const result = await axios(options);
+          options.method = "POST"
+          options.data = data
+          
+
+
+          const result = await axios(options);
           
         return result.data;
     }catch(err){

@@ -44,10 +44,13 @@ const innitiateTranz = (data) => {
             callback_url:"https://www.fischela.com",
         }
           
-        options.method = "POST"
-        options.data = data
-        options.url = "https://api.paystack.co/transaction/initialize"
-        const result = await axios(options);
+          options.method = "POST"
+          options.data = data
+          options.url = "https://api.paystack.co/transaction/initialize"
+
+
+
+          const result = await axios(options);
           
         return result.data;
     }catch(err){

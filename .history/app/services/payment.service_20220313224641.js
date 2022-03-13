@@ -37,17 +37,21 @@ const getAllTransactions = async (data) => {
 
 const innitiateTranz = (data) => {
     try{
-        let data = {
-            email:data.email,
-            amount:data.amount,
-            currency:"NGN",
-            callback_url:"https://www.fischela.com",
-        }
-          
-        options.method = "POST"
-        options.data = data
-        options.url = "https://api.paystack.co/transaction/initialize"
-        const result = await axios(options);
+        const options = {
+            method: 'POST',
+            headers: { 'content-type': 'application/json', "Authorization":"Bearer "+process.env.PAYSTACK_TEST_SECRET_KEY},
+            data: {
+                email:data.email,
+                amount:data.amount,
+                currency:"NGN",
+                callback_url:"https://www.fischela.com",
+
+            },
+            url:"https://api.paystack.co/transaction/initialize"
+          };
+
+          options.method
+          const result = await axios(options);
           
         return result.data;
     }catch(err){

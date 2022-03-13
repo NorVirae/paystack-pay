@@ -1,4 +1,4 @@
-const { getAllTransactions, innitiateTranz } = require('../services/payment.service');
+const { getAllTransactions } = require('../services/payment.service');
 
 const  axios = require('axios');
 
@@ -18,19 +18,9 @@ const getTransactions = async (req, res) => {
 }
 
 const innitiateTransaction = async () =>{
-    try{
-        console.log(process.env.PAYSTACK_TEST_SECRET_KEY);
-        const result = await innitiateTranz();
-        console.log(result, "HErE");
-        res.status(200).json(result);
-    }catch(err){
-        res.status(401).json({
-            message:"error fetch data"
-        })
-    }
+
 }
 
 module.exports = {
-    getTransactions,
-    innitiateTransaction
+    getTransactions
 }

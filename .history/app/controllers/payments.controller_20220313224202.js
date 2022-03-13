@@ -1,4 +1,4 @@
-const { getAllTransactions, innitiateTranz } = require('../services/payment.service');
+const { getAllTransactions } = require('../services/payment.service');
 
 const  axios = require('axios');
 
