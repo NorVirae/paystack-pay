@@ -6,7 +6,7 @@ export const login = (data) => {
 
 }
 
-export const createTransactions = (data) => {
+export const getAlltransactu = (data) => {
     
 }
 
