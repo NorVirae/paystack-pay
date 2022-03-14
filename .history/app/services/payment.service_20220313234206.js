@@ -20,13 +20,8 @@ const getAllTransactions = async (data) => {
     // console.log(process.env.PAYSTACK_TEST_SECRET_KEY, "from services")
 
     try{
-
-    
-          
-        options.method = "GET"
-        options.url = "https://api.paystack.co/transaction"
         
-         const result = await axios(options);
+          const result = await axios(options);
           
         return result.data;
     }catch(err){
@@ -46,11 +41,11 @@ const innitiateTranz = async (data) => {
             email:data.email,
             amount:data.amount,
             currency:"NGN",
-            callback_url:data.callback_url,
+            callback_url:"https://www.fischela.com",
         }
           
         options.method = "POST"
-        options.data = datas
+        options.data = data
         options.url = "https://api.paystack.co/transaction/initialize"
         const result = await axios(options);
           

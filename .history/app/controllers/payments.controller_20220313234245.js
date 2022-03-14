@@ -21,7 +21,7 @@ const innitiateTransaction = async (req, res) =>{
     console.log(req.body)
     try{
         console.log(process.env.PAYSTACK_TEST_SECRET_KEY);
-        const result = await innitiateTranz(req.body);
+        const result = await innitiateTranz();
         console.log(result, "HErE");
         res.status(200).json(result);
     }catch(err){

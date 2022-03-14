@@ -46,7 +46,7 @@ const innitiateTranz = async (data) => {
             email:data.email,
             amount:data.amount,
             currency:"NGN",
-            callback_url:data.callback_url,
+            callback_url:"https://www.fischela.com",
         }
           
         options.method = "POST"

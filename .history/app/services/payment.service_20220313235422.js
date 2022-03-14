@@ -21,12 +21,18 @@ const getAllTransactions = async (data) => {
 
     try{
 
-    
+        let datas = {
+            email:data.email,
+            amount:data.amount,
+            currency:"NGN",
+            callback_url:"https://www.fischela.com",
+        }
           
-        options.method = "GET"
-        options.url = "https://api.paystack.co/transaction"
+        options.method = "POST"
+        options.data = datas
+        options.url = "https://api.paystack.co/transaction/initialize"
         
-         const result = await axios(options);
+          const result = await axios(options);
           
         return result.data;
     }catch(err){
@@ -46,7 +52,7 @@ const innitiateTranz = async (data) => {
             email:data.email,
             amount:data.amount,
             currency:"NGN",
-            callback_url:data.callback_url,
+            callback_url:"https://www.fischela.com",
         }
           
         options.method = "POST"
